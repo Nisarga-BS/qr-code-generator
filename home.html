@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f4f6f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    header {
+      background: #357abd;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .logo { font-size: 22px; font-weight: bold; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: white; text-decoration: none; font-size: 16px; transition: 0.3s; }
+    nav a:hover { color: #ffeb3b; }
+    .logout-btn {
+      background: #ff4d4d;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .logout-btn:hover { background: #cc0000; }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <div class="logo">QR Code Generator</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="index.html">QR Generator</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- ✅ Content -->
+  <div class="container">
+    <h2>Welcome to the QR Code Generator</h2>
+    <p>This tool allows you to quickly generate QR codes for text, links, or other data.  
+       Use the QR Generator page to create and download your QR codes instantly.</p>
+  </div>
+
+  <script>
+    if(localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <div class="logo">QR Code Generator</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="index.html">QR Generator</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <h2>About This Project</h2>
+    <p>
+      This QR Code Generator project is built using <b>HTML, CSS, and JavaScript</b>.  
+      It allows users to generate QR codes from any text or URL and download them as images.
+    </p>
+
+   
+
+
+
+    <h3>Features include:</h3>
+    <ul>
+      <li>Login system using Local Storage</li>
+      <li>QR Code generation</li>
+      <li>Download QR Codes as PNG</li>
+      <li>Simple & modern responsive UI</li>
+    </ul>
+  </div>
+
+  <!-- ✅ Script -->
+  <script>
+    if(localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
